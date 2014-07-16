@@ -3,7 +3,7 @@ var invariant = require('react/lib/invariant');
 var warning = require('react/lib/warning');
 
 var CHANGE_EVENTS = {
-  hash: (window.addEventListener) ? 'hashchange' : 'onhashchange',
+  hash: (ExecutionEnvironment.canUseEventListeners && window.addEventListener) ? 'hashchange' : 'onhashchange',
   history: 'popstate'
 };
 
